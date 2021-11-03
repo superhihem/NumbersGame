@@ -15,7 +15,3 @@ window.onload = function(){
     // timer : 120
     //});
 }   
-
-/*
-
-/*
