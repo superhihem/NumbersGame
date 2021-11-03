@@ -6,7 +6,7 @@ window.onload = function(){
     game = new Game();
     
     //с указанием конкретного id элемента
-    // game = new Game({gameElement = $("#my-id")});
+    // game = new Game({gameElement : $("#my-id")});
     
     //установка таймера на игру
     //указывать нужно в секундах
