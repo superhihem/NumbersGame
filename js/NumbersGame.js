@@ -21,7 +21,7 @@ class Game{
     constructor(args){
         if(args){
             this.gameElement = args.gameElement || $("#game-window");
-            this.timer = args.timer || 10;
+            this.timer = args.timer || 60;
             this.time = this.timer;
             this.interval;
             this.currentLevel = 1;
@@ -29,7 +29,7 @@ class Game{
         }
         else{
             this.gameElement = $("#game-window");
-            this.timer = 10;
+            this.timer = 60;
             this.time = this.timer;
             this.interval;
             this.currentLevel = 1;
