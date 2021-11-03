@@ -1,0 +1,294 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    --blue-color: #4db8ec;
+    --pink-color: #fc73b0;
+    --purple-color: #8e3dcb;
+    --green-color: #94c94d;
+    --orange-color: #f28e37;
+}
+
+.bg-blue{
+    background: var(--blue-color);
+}
+
+.bg-pink{
+    background: var(--pink-color);
+}
+
+.bg-purple{
+    background: var(--purple-color);
+}
+
+.bg-green{
+    background: var(--green-color);
+}
+
+.bg-orange{
+    background: var(--orange-color);
+}
+
+.wrapper {
+    margin: 30px;
+    padding: 45px;
+    background: white;
+    border-radius: 5px;
+    box-shadow: 0 0 3px rgb(199, 199, 199);
+    display: inline-block;
+    width: auto;
+}
+
+.game-window{
+    width: 600px;
+    height: 500px;
+    overflow: hidden;
+    font-family: 'Montserrat', sans-serif;
+    position: relative;
+    transition: .2s;
+}
+
+.headline{
+    margin: 60px 50px 0 50px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+    padding: 25px 20px;
+    border-radius: 5px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.headline__text{
+    font-weight: 500;
+    font-size: 20px;
+}
+
+.headline__number{
+    font-size: 50px;
+    font-weight: 600;
+}
+
+.numbers-container{
+    margin: 40px 50px;
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-flow: row wrap;
+}
+
+.number-item{
+    text-align: center;
+    font-size: 35px;
+    font-weight: 600;
+    color: white;
+    cursor:pointer;
+}
+
+.number-item.for-guide{
+    border: 1px solid white;
+    animation: .5s ease-in-out infinite alternate number-for-guide;
+}
+
+.number-item:hover{
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+}
+
+.game-guide{
+    text-align: center;
+    font-weight: 500;
+    color: white;
+    font-size: 20px;
+}
+
+.cursor-pointer{
+    cursor:pointer;
+}
+
+.pre-game-timer{
+    background: grey;
+    width: 100%;
+    height: 100%;
+    top:0;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pre-game-timer__number{
+    border-radius: 100%;
+    text-align: center;
+    width: 100px;
+    height: 100px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    color: white;
+    font-size: 35px;
+    background: darkgray;
+}
+
+.image-wrapper{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+    z-index: 10;
+}
+
+.answer-result{
+    display: block;
+    animation: .3s ease-in-out infinite alternate answer-result-animation;
+}
+
+.game-menu{
+    text-transform: uppercase;
+    background: rgba(255, 255, 255, 0.3);
+    display: inline-flex;
+    position: absolute;
+    right: 0;
+    gap: 30px;
+    padding: 10px 20px;
+    justify-content: flex-end;
+}
+
+.game-menu__item{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.game-menu__item > *:nth-child(1){
+    font-size: 10px;
+}
+
+.game-menu__item > *:nth-child(2){
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.game-results{
+    display: flex;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    color: white;
+    font-weight: 700;
+}
+
+.game-results .max-result{
+    font-size: 30px;
+}
+
+.game-results .try-again-button{
+    text-transform: uppercase;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    background: transparent;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+}
+
+.game-results .try-again-button:hover{
+    color: black;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.slide-over-animation{
+    animation: 0.3s linear slide-over-animation;
+    animation-iteration-count: 1
+}
+
+.slide-in-animation{
+    animation: 0.3s linear  slide-in-animation;
+}
+
+.number-item.a1{
+    animation: .5s ease-in-out infinite alternate number-animation1;
+}
+
+.number-item.a2{
+    animation: .5s ease-in-out infinite alternate number-animation2;
+}
+
+.number-item.a3 > *{
+    display: inline-block;
+    animation: .5s ease-in-out infinite alternate number-animation3;
+}
+
+
+@keyframes number-for-guide{
+    from{
+        border: solid 2px white;
+
+    }
+    to{
+        border: solid 2px rgba(255, 255, 255, 0);
+    }
+}
+
+
+@keyframes number-animation1{
+    from{
+        transform: scale(1);
+
+    }
+    to{
+        transform: scale(0.7);
+    }
+}
+
+@keyframes number-animation2{
+    from{
+        opacity: 1;
+
+    }
+    to{
+        opacity: 0.1;
+    }
+}
+
+@keyframes number-animation3{
+    from{
+        transform: rotateZ(25deg);
+    }
+    to{
+        transform: rotateZ(-25deg);
+    }
+}
+
+@keyframes slide-over-animation {
+    to{
+        transform: translateX(-600px);
+    }
+}
+
+@keyframes slide-in-animation {
+    from{
+        transform: translateX(600px);
+    }
+    to{
+        transform: translateX(0px);
+    }
+}
+
+@keyframes answer-result-animation {
+    from{
+        transform: rotateZ(25deg);
+    }
+    to{
+        transform: rotateZ(-25deg);
+    }
+}
